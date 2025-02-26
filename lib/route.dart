@@ -78,8 +78,8 @@ class _routeState extends State<route> with SingleTickerProviderStateMixin{
                 tabs: const [
                   Tab(icon: Icon(Icons.home), text: "Home"),
 
-                  Tab(icon: Icon(Icons.leaderboard), text: "Leaderboard"),
-                  Tab(icon: Icon(Icons.settings), text: "Settings"),
+                  Tab(icon: Icon(Icons.leaderboard), text: "Stream"),
+                  Tab(icon: Icon(Icons.settings), text: "Chat"),
                 ],
               ),
             ],

@@ -130,7 +130,7 @@ class _AudioScreenState extends State<Audio> {
       appBar: AppBar(title: Text("Audio Player (${widget.id})")),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
+        // crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           InkWell(
             onTap: playAudio,
