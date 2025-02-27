@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'package:nafsshield/view/home.dart';
+import 'package:nafsshield/view/video_player/video_player.dart';
 
 
 
@@ -93,8 +94,11 @@ class _routeState extends State<route> with SingleTickerProviderStateMixin{
             children: [
               // Center(child: Text("Quiz Page", style: TextStyle(fontSize: 18))),
               Home(),
-              Center(child: Text("Leaderboard Page", style: TextStyle(fontSize: 18))),
-              Center(child: Text("Settings Page", style: TextStyle(fontSize: 18))),
+              // Center(child: Text("Video page ", style: TextStyle(fontSize: 18))),
+            VideoPlayer(),
+              Center(child: Text("Chat apps", style: TextStyle(fontSize: 18))),
+
+
             ],
           ),
         ),
