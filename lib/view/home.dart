@@ -25,6 +25,7 @@ class _HomeState extends State<Home> {
     'Azan Alarm',
     'Calender',
     'Tasbih',
+    'liability'
   ];
 
   @override
