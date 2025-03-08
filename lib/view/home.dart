@@ -35,7 +35,7 @@ class _HomeState extends State<Home> {
       children: [
         Expanded(
           child: GridView.count(
-            crossAxisCount: 2,
+            crossAxisCount: 3,
             //maxCrossAxisExtent: 150, // Maximum width of each item
             crossAxisSpacing: 20,
             mainAxisSpacing: 10,
