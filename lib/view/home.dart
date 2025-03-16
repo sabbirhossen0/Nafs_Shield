@@ -6,7 +6,7 @@ import 'package:nafsshield/view/tasbih/tasbih.dart';
 import 'package:nafsshield/view/compass.dart';
 
 import 'package:nafsshield/view/audio_quran/audio_home.dart';
-
+import 'package:nafsshield/view/Self-exam/Self-exam.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -25,7 +25,7 @@ class _HomeState extends State<Home> {
     'Azan Alarm',
     'Calender',
     'Tasbih',
-    'liability'
+    'Self-exam'
   ];
 
   @override
@@ -61,7 +61,10 @@ class _HomeState extends State<Home> {
                     // Get.to(const HomePage(), arguments: 'Quran');
                       Get.to(KiblaCompass());
                       break;
-
+                    case 'Self-exam':
+                    // Get.to(const HomePage(), arguments: 'Quran');
+                      Get.to(selfexam());
+                      break;
                   }
                 },
 
