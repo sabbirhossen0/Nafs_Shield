@@ -8,6 +8,28 @@ class selfexam extends StatefulWidget {
 
 class _selfexamState extends State<selfexam> {
 
+  // Namaz checkboxes
+  bool fajr = false;
+  bool fajrJamaat = false;
+  bool zuhr = false;
+  bool zuhrJamaat = false;
+  bool asr = false;
+  bool asrJamaat = false;
+  bool maghrib = false;
+  bool maghribJamaat = false;
+  bool isha = false;
+  bool ishaJamaat = false;
+
+  // Other daily activities
+  bool readHadith = false;
+  bool readQuran = false;
+  bool smoked = false;
+  bool didGoodWork = false;
+
+  // Notes
+  TextEditingController notesController = TextEditingController();
+
+
 
 
   Widget buildNamazRow(String label, bool value, bool jamaatValue, Function(bool?) onChanged, Function(bool?) onJamaatChanged) {
@@ -75,7 +97,9 @@ class _selfexamState extends State<selfexam> {
             ),
             SizedBox(height: 20),
             ElevatedButton(
-              onPressed: submitReport,
+              onPressed: (){
+                print("submitted");
+              },
               child: Text("Submit Report"),
             )
           ],
