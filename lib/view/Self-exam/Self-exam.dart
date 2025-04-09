@@ -10,7 +10,23 @@ class _selfexamState extends State<selfexam> {
 
 
 
-
+  Widget buildNamazRow(String label, bool value, bool jamaatValue, Function(bool?) onChanged, Function(bool?) onJamaatChanged) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        CheckboxListTile(
+          title: Text(label),
+          value: value,
+          onChanged: onChanged,
+        ),
+        CheckboxListTile(
+          title: Text("Jamaat"),
+          value: jamaatValue,
+          onChanged: onJamaatChanged,
+        ),
+      ],
+    );
+  }
 
 
 
