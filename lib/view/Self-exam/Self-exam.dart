@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+
 class selfexam extends StatefulWidget {
   const selfexam({super.key});
 
@@ -59,53 +61,58 @@ class _selfexamState extends State<selfexam> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(child: Column(
-      children: [
-        Column(
-          children: [
-            Text("🕌 Namaz", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-            buildNamazRow("Fajr", fajr, fajrJamaat, (val) => setState(() => fajr = val!), (val) => setState(() => fajrJamaat = val!)),
-            buildNamazRow("Zuhr", zuhr, zuhrJamaat, (val) => setState(() => zuhr = val!), (val) => setState(() => zuhrJamaat = val!)),
-            buildNamazRow("Asr", asr, asrJamaat, (val) => setState(() => asr = val!), (val) => setState(() => asrJamaat = val!)),
-            buildNamazRow("Maghrib", maghrib, maghribJamaat, (val) => setState(() => maghrib = val!), (val) => setState(() => maghribJamaat = val!)),
-            buildNamazRow("Isha", isha, ishaJamaat, (val) => setState(() => isha = val!), (val) => setState(() => ishaJamaat = val!)),
-            Divider(),
-            CheckboxListTile(
-              title: Text("📖 Read Hadith"),
-              value: readHadith,
-              onChanged: (val) => setState(() => readHadith = val!),
-            ),
-            CheckboxListTile(
-              title: Text("📗 Read Quran"),
-              value: readQuran,
-              onChanged: (val) => setState(() => readQuran = val!),
-            ),
-            CheckboxListTile(
-              title: Text("🚬 Smoked Today"),
-              value: smoked,
-              onChanged: (val) => setState(() => smoked = val!),
-            ),
-            CheckboxListTile(
-              title: Text("🌟 Did a Good Deed"),
-              value: didGoodWork,
-              onChanged: (val) => setState(() => didGoodWork = val!),
-            ),
-            TextField(
-              controller: notesController,
-              maxLines: 3,
-              decoration: InputDecoration(labelText: "📝 Notes / Reflections", border: OutlineInputBorder()),
-            ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: (){
-                print("submitted");
-              },
-              child: Text("Submit Report"),
-            )
-          ],
-        ),
+    return SafeArea(child: SingleChildScrollView(
+      child: Center(
+        child: Container(
+          width: MediaQuery.of(context).size.width/2,
 
-      ],
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text("🕌 Namaz", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+              buildNamazRow("Fajr", fajr, fajrJamaat, (val) => setState(() => fajr = val!), (val) => setState(() => fajrJamaat = val!)),
+              buildNamazRow("Zuhr", zuhr, zuhrJamaat, (val) => setState(() => zuhr = val!), (val) => setState(() => zuhrJamaat = val!)),
+              buildNamazRow("Asr", asr, asrJamaat, (val) => setState(() => asr = val!), (val) => setState(() => asrJamaat = val!)),
+              buildNamazRow("Maghrib", maghrib, maghribJamaat, (val) => setState(() => maghrib = val!), (val) => setState(() => maghribJamaat = val!)),
+              buildNamazRow("Isha", isha, ishaJamaat, (val) => setState(() => isha = val!), (val) => setState(() => ishaJamaat = val!)),
+              Divider(),
+              CheckboxListTile(
+                title: Text("📖 Read Hadith"),
+                value: readHadith,
+                onChanged: (val) => setState(() => readHadith = val!),
+              ),
+              CheckboxListTile(
+                title: Text("📗 Read Quran"),
+                value: readQuran,
+                onChanged: (val) => setState(() => readQuran = val!),
+              ),
+              CheckboxListTile(
+                title: Text("🚬 Smoked Today"),
+                value: smoked,
+                onChanged: (val) => setState(() => smoked = val!),
+              ),
+              CheckboxListTile(
+                title: Text("🌟 Did a Good Deed"),
+                value: didGoodWork,
+                onChanged: (val) => setState(() => didGoodWork = val!),
+              ),
+              TextField(
+                controller: notesController,
+                maxLines: 3,
+                decoration: InputDecoration(labelText: "📝 Notes / Reflections", border: OutlineInputBorder()),
+              ),
+              SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: (){
+                  print("submitted");
+                },
+                child: Text("Submit Report"),
+              )
+            ],
+          ),
+        ),
+      ),
     ));
   }
 }
