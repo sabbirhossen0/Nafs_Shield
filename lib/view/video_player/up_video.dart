@@ -9,7 +9,7 @@ class UploadPage extends StatefulWidget {
 }
 
 class _UploadPageState extends State<UploadPage> {
-  XFile? _video;
+  XFile? _video;s
   final picker = ImagePicker();
   final dio = Dio();
 
