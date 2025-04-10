@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
-import 'package:nafstube/player/video_player.dart';
-import 'package:nafstube/player/up_video.dart';
+import 'package:nafsshield/view/video_player/video_player.dart';
+import 'package:nafsshield/view/video_player/up_video.dart';
 
 class HomePage extends StatefulWidget {
   @override

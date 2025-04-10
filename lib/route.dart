@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 
 import 'package:nafsshield/view/home.dart';
 import 'package:nafsshield/view/video_player/video_player.dart';
-
+import 'package:nafsshield/view/video_player/videolist.dart';
 
 
 class route extends StatefulWidget {
@@ -95,7 +95,7 @@ class _routeState extends State<route> with SingleTickerProviderStateMixin{
               // Center(child: Text("Quiz Page", style: TextStyle(fontSize: 18))),
               Home(),
               // Center(child: Text("Video page ", style: TextStyle(fontSize: 18))),
-            VideoPlayer(),
+            HomePage(),
               Center(child: Text("Chat apps", style: TextStyle(fontSize: 18))),
 
 
