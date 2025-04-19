@@ -71,14 +71,7 @@ counterController.reset();
               ],
             )
         ),
-          child: Center(
-            child: Text(
-              "Submit 📩",
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 20,)
-              ,)
-            ,)
+         //here not need this 
       )
 
 
