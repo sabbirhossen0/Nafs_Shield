@@ -132,6 +132,9 @@ class _AudioScreenState extends State<Audio> {
         mainAxisAlignment: MainAxisAlignment.center,
         // crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+
+Text("Audio Quran"),
+
           InkWell(
             onTap: playAudio,
             child: Icon(
