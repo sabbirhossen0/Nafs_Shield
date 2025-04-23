@@ -26,7 +26,7 @@ class _routeState extends State<route> with SingleTickerProviderStateMixin{
 
   @override
   Widget build(BuildContext context) {
-    // Set status bar color to match AppBar
+
     SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(
         statusBarColor: Colors.green, // Same as AppBar
@@ -78,7 +78,6 @@ class _routeState extends State<route> with SingleTickerProviderStateMixin{
                 unselectedLabelColor: Colors.white,
                 tabs: const [
                   Tab(icon: Icon(Icons.home), text: "Home"),
-
                   Tab(icon: Icon(Icons.leaderboard), text: "Stream"),
                   Tab(icon: Icon(Icons.settings), text: "Chat"),
                 ],

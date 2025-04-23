@@ -19,7 +19,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future<void> fetchVideos() async {
-    final response = await dio.get('http://192.168.0.100:8001/videos/');
+    final response = await dio.get('http://127.0.0.1:8001/videos/');
     setState(() {
       videos = response.data;
     });
