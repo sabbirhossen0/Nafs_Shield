@@ -21,7 +21,7 @@ class _ChatWithGaminiPageState extends State<ChatWithGaminiPage> {
       _response = '';
     });
 
-    final url = Uri.parse('http://10.0.2.2:8000/api/chat_with_gamini/'); // Use local IP for real device
+    final url = Uri.parse('http://10.0.2.2:8000/gamini/chat/'); // Use local IP for real device
 
     try {
       final res = await http.post(
@@ -47,7 +47,7 @@ class _ChatWithGaminiPageState extends State<ChatWithGaminiPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Chat with Gamini'),
+        title: Text('Chat with ShifaMind'),
         backgroundColor: Colors.deepPurple,
       ),
       body: Padding(
