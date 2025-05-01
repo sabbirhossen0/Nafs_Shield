@@ -25,7 +25,9 @@ class _HomeState extends State<Home> {
     'Azan Alarm',
     'Calender',
     'Tasbih',
-    'Self-exam'
+    'Self-exam',
+    'ShifaMind'
+
   ];
 
   @override
