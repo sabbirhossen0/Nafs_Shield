@@ -1,88 +1,62 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:google_fonts/google_fonts.dart';
 
-class ChatWithGaminiPage extends StatefulWidget {
+class GeminiResponsePage extends StatefulWidget {
   @override
-  _ChatWithGaminiPageState createState() => _ChatWithGaminiPageState();
+  _GeminiResponsePageState createState() => _GeminiResponsePageState();
 }
 
-class _ChatWithGaminiPageState extends State<ChatWithGaminiPage> {
-  final TextEditingController _controller = TextEditingController();
-  String _response = '';
-  bool _isLoading = false;
+class _GeminiResponsePageState extends State<GeminiResponsePage> {
+  String responseMessage = '';
 
-  Future<void> _sendMessage() async {
-    final message = _controller.text.trim();
-    if (message.isEmpty) return;
+  @override
+  void initState() {
+    super.initState();
+    fetchGeminiResponse();
+  }
 
-    setState(() {
-      _isLoading = true;
-      _response = '';
-    });
+  Future<void> fetchGeminiResponse() async {
+    final url = Uri.parse('http://127.0.0.1:8000/chat/'); // Update your Django endpoint
+    final response = await http.post(
+      url,
+      headers: {'Content-Type': 'application/json'},
+      body: jsonEncode({'message': 'I am feeling sad'}),
+    );
 
-    final url = Uri.parse('http://127.0.0.1:8001/gamini/chat/'); // Use local IP for real device
-
-    try {
-      final res = await http.post(
-        url,
-        headers: {'Content-Type': 'application/json'},
-        body: jsonEncode({'message': message}),
-      );
-
-      if (res.statusCode == 200) {
-        final data = jsonDecode(res.body);
-        setState(() => _response = data['reply']);
-      } else {
-        setState(() => _response = 'Error: ${res.body}');
-      }
-    } catch (e) {
-      setState(() => _response = 'Error: $e');
-    } finally {
-      setState(() => _isLoading = false);
+    if (response.statusCode == 200) {
+      final decoded = utf8.decode(response.bodyBytes);
+      final data = jsonDecode(decoded);
+      setState(() {
+        responseMessage = data['reply'] ?? 'No response';
+      });
+    } else {
+      setState(() {
+        responseMessage = 'Error: ${response.statusCode}';
+      });
     }
+  }
+
+  bool isArabic(String text) {
+    final arabicRegex = RegExp(r'[\u0600-\u06FF]');
+    return arabicRegex.hasMatch(text);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Chat with ShifaMind'),
-        backgroundColor: Colors.deepPurple,
-      ),
+      appBar: AppBar(title: Text('Gemini API Response')),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            TextField(
-              controller: _controller,
-              decoration: InputDecoration(
-                labelText: 'Your message',
-                border: OutlineInputBorder(),
-              ),
-              maxLines: 3,
-            ),
-            SizedBox(height: 12),
-            ElevatedButton(
-              onPressed: _isLoading ? null : _sendMessage,
-              child: _isLoading
-                  ? CircularProgressIndicator(color: Colors.white)
-                  : Text('Send'),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.deepPurple,
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-              ),
-            ),
-            SizedBox(height: 20),
-            Expanded(
-              child: SingleChildScrollView(
-                child: Text(
-                  _response,
-                  style: TextStyle(fontSize: 16, fontStyle: FontStyle.italic),
-                ),
-              ),
-            ),
-          ],
+        child: Directionality(
+          textDirection: isArabic(responseMessage) ? TextDirection.rtl : TextDirection.ltr,
+          child: Text(
+            responseMessage,
+            style: isArabic(responseMessage)
+                ? GoogleFonts.notoNaskhArabic(fontSize: 18)
+                : GoogleFonts.notoSansBengali(fontSize: 18),
+          ),
         ),
       ),
     );
