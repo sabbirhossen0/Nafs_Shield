@@ -21,7 +21,7 @@ class _ChatWithGaminiPageState extends State<ChatWithGaminiPage> {
       _response = '';
     });
 
-    final url = Uri.parse('http://10.0.2.2:8000/gamini/chat/'); // Use local IP for real device
+    final url = Uri.parse('http://127.0.0.1:8000/gamini/chat/'); // Use local IP for real device
 
     try {
       final res = await http.post(
