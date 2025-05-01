@@ -8,6 +8,8 @@ import 'package:nafsshield/view/compass.dart';
 import 'package:nafsshield/view/audio_quran/audio_home.dart';
 import 'package:nafsshield/view/Self-exam/Self-exam.dart';
 
+import 'package:nafsshield/view/ShifaMind/shifamind.dart';
+
 class Home extends StatefulWidget {
   const Home({super.key});
 
@@ -27,7 +29,6 @@ class _HomeState extends State<Home> {
     'Tasbih',
     'Self-exam',
     'ShifaMind'
-
   ];
 
   @override
@@ -67,6 +68,11 @@ class _HomeState extends State<Home> {
                     // Get.to(const HomePage(), arguments: 'Quran');
                       Get.to(selfexam());
                       break;
+                    case 'ShifaMind':
+                    // Get.to(const HomePage(), arguments: 'Quran');
+                      Get.to(ChatWithGaminiPage());
+                      break;
+
                   }
                 },
 
