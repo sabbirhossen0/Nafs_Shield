@@ -72,14 +72,14 @@ class _routeState extends State<route> with SingleTickerProviderStateMixin{
                 controller: _tabController,
                 indicator: BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.circular(12),
+                  borderRadius: BorderRadius.circular(42),
                 ),
                 labelColor: Colors.green,
                 unselectedLabelColor: Colors.white,
                 tabs: const [
                   Tab(icon: Icon(Icons.home), text: "Home"),
                   Tab(icon: Icon(Icons.leaderboard), text: "Stream"),
-                  Tab(icon: Icon(Icons.settings), text: "Chat"),
+                  // Tab(icon: Icon(Icons.settings), text: "Chat"),
                 ],
               ),
             ],

@@ -46,7 +46,7 @@ class _HomeState extends State<Home> {
             children: List.generate(topic.length, (index) {
               return InkWell(
                 onTap: () {
-                  switch (topic[index]) {
+                  switch (topic[index]){
                     case 'Quran':
                       // Get.to(const HomePage(), arguments: 'Quran');
                       Get.to(HomePage());
@@ -70,7 +70,7 @@ class _HomeState extends State<Home> {
                       break;
                     case 'ShifaMind':
                     // Get.to(const HomePage(), arguments: 'Quran');
-                      Get.to(ChatWithGaminiPage());
+                      Get.to(GeminiResponsePage());
                       break;
 
                   }
