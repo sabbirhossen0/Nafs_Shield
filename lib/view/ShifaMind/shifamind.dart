@@ -19,7 +19,7 @@ class _GeminiResponsePageState extends State<GeminiResponsePage> {
       responseMessage = '';
     });
 
-    final url = Uri.parse('http://127.0.0.1:8001/chat/'); // Your Django endpoint
+    final url = Uri.parse('http://127.0.0.1:8001/gamini/gchat/'); // Your Django endpoint
     final response = await http.post(
       url,
       headers: {'Content-Type': 'application/json'},

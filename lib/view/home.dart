@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:nafsshield/view/Quran/HomePage/home_page.dart';
-import 'package:nafsshield/view/audioquran.dart';
+// import 'package:nafsshield/view/audioquran.dart';
 import 'package:nafsshield/view/tasbih/tasbih.dart';
 import 'package:nafsshield/view/compass.dart';
 
@@ -9,6 +9,9 @@ import 'package:nafsshield/view/audio_quran/audio_home.dart';
 import 'package:nafsshield/view/Self-exam/Self-exam.dart';
 
 import 'package:nafsshield/view/ShifaMind/shifamind.dart';
+
+import 'package:nafsshield/view/hadith/hadithlist.dart';
+
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -21,7 +24,7 @@ class _HomeState extends State<Home> {
 
   final List<String> topic = [
     'Quran',
-    'Hadith',
+    'Hadith Book',
     'Audio Quran',
     'Qibla compass',
     'Azan Alarm',
@@ -51,6 +54,13 @@ class _HomeState extends State<Home> {
                       // Get.to(const HomePage(), arguments: 'Quran');
                       Get.to(HomePage());
                       break;
+
+                    case 'Hadith Book':
+                    // Get.to(const HomePage(), arguments: 'Quran');
+                      Get.to(HadithListPage());
+                      break;
+
+
                     case 'Audio Quran':
                     // Get.to(const HomePage(), arguments: 'Quran');
                       Get.to(AudioHome());
@@ -66,7 +76,7 @@ class _HomeState extends State<Home> {
                       break;
                     case 'Self-exam':
                     // Get.to(const HomePage(), arguments: 'Quran');
-                      Get.to(selfexam());
+                      Get.to(SelfExamPage());
                       break;
                     case 'ShifaMind':
                     // Get.to(const HomePage(), arguments: 'Quran');

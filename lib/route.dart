@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'package:nafsshield/view/home.dart';
-import 'package:nafsshield/view/video_player/video_player.dart';
+// import 'package:nafsshield/view/video_player/video_player.dart';
 import 'package:nafsshield/view/video_player/videolist.dart';
 
 
@@ -20,7 +20,7 @@ class _routeState extends State<route> with SingleTickerProviderStateMixin{
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 3, vsync: this);
+    _tabController = TabController(length: 2, vsync: this);
   }
 
 
