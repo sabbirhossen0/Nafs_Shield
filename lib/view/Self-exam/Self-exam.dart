@@ -9,7 +9,7 @@ class SelfExamPage extends StatefulWidget {
   @override
   State<SelfExamPage> createState() => _SelfExamPageState();
 }
-
+//develop by sabbir
 class _SelfExamPageState extends State<SelfExamPage> {
   bool fajr = false, fajrJamaat = false, zuhr = false, zuhrJamaat = false;
   bool asr = false, asrJamaat = false, maghrib = false, maghribJamaat = false;
