@@ -1,3 +1,4 @@
+//Developed by Shakhawat
 import 'package:flutter/material.dart';
 import 'package:nafsshield/view/Quran/Classes/classes.dart';
 
