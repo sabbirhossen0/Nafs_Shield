@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:nafsshield/view/Quran/HomePage/home_page.dart';
-// import 'package:nafsshield/view/audioquran.dart';
+
 import 'package:nafsshield/view/tasbih/tasbih.dart';
 import 'package:nafsshield/view/compass.dart';
 
